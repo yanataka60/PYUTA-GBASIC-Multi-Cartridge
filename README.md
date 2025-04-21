@@ -1,6 +1,6 @@
 # TOMY ぴゅう太用G-BASIC Multi Cartridge
 
-![Multi Cartridge](https://github.com/yanataka60/PYUTA-Multi-Cartridge/blob/main/JPEG/TITLE.jpg)
+![Multi Cartridge](https://github.com/yanataka60/PYUTA-GBASIC-Multi-Cartridge/blob/main/JPEG/TITLE.jpg)
 
 　「G-BASICのゲームをカートリッジ化する」(https://tms9918.hatenablog.com/entry/2018/02/12/234003)で作成したROMイメージを初代ぴゅう太で気楽に遊べるようROMイメージをディップスイッチで切り替えられる基板を作ってみました。
 
@@ -13,9 +13,9 @@
 ### 回路図
 　KiCadフォルダ内のPYUTA_GBASIC.pdfを参照してください。
 
-[回路図](https://github.com/yanataka60/PYUTA-Multi-Cartridge/blob/main/Kicad/16K/PYUTA16k.pdf)
+[回路図](https://github.com/yanataka60/PYUTA-GBASIC-Multi-Cartridge/blob/main/Kicad/PYUTA_GBASIC.pdf)
 
-![16K](https://github.com/yanataka60/PYUTA-Multi-Cartridge/blob/main/Kicad/16K/PYUTA16k_1.jpg)
+![G-BASIC](https://github.com/yanataka60/PYUTA-GBASIC-Multi-Cartridge/blob/main/Kicad/PYUTA_GBASIC_1.jpg)
 
 ### 部品
 |番号|品名|数量|備考|
@@ -55,6 +55,8 @@
 　OFFにすることでG-BASIC Multi Cartridgeを切り離すことができます。
 
 　G-BASIC Multi Cartridgeを挿入したまま、カートリッジスロットにカートリッジを挿入しても正常に動作するようにできます。
+
+### ぴゅう太BIOS抽出方法
 
 ### ROMイメージ作成方法
 
