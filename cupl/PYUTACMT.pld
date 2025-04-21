@@ -1,0 +1,51 @@
+NAME		PYUTACMT;
+PARTNO		22V10;
+REVISION	A;
+DATE		25/3/21;
+DESIGNER	None;
+COMPANY       None;
+ASSEMBLY	None;
+LOCATION	None;
+DEVICE		G22V10;
+                                                    
+
+/* INPUTS... */
+Pin   2 = A2;
+Pin   3 = A1;
+Pin   4 = A0;
+Pin   5 = CMT_SEL;
+Pin   6 = 32K_SEL;
+Pin   7 = OFF_SW;
+
+/* OUTPUTS... */
+Pin   14 = CE_n;
+Pin   15 = CE2_n;
+Pin   16 = SELEXM;
+Pin   17 = A14;
+Pin   18 = A13;
+
+/** Logic **/
+
+CMT_CE_n = !((!(A0) & A1 & A2) # (A0 & A1 & !(A2)));
+
+CMT_CE2_n =!((!(A0) & A1 & !(A2)) # (A0 & !(A1) & !(A2)) # (A0 & !(A1) & A2));
+
+CMT_SELEXM = !(CE_n & CE2_n);
+
+CMT_A14 = A1;
+
+32K_CE2_n = A0 & A1 # !(A0) & !(A1);
+
+32K_SELEXM =  A0 & !(A1) # A1 & !(A0);
+
+32K_A14 =  !(A1);
+
+CE_n = CMT_CE_n # 32K_SEL # OFF_SW;
+
+CE2_n =(CMT_SEL # CMT_CE2_n) & (32K_SEL # 32K_CE2_n) # OFF_SW;
+
+SELEXM = (CMT_SEL # CMT_SELEXM) & (32K_SEL # 32K_SELEXM) & !(OFF_SW);
+
+A14 = (CMT_SEL & CMT_A14) # (32K_SEL & 32K_A14);
+
+A13 = A2;
