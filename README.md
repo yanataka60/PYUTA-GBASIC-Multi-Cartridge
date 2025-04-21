@@ -2,9 +2,11 @@
 
 ![Multi Cartridge](https://github.com/yanataka60/PYUTA-GBASIC-Multi-Cartridge/blob/main/JPEG/TITLE.jpg)
 
-　「G-BASICのゲームをカートリッジ化する」(https://tms9918.hatenablog.com/entry/2018/02/12/234003)で作成したROMイメージを初代ぴゅう太で気楽に遊べるようROMイメージをディップスイッチで切り替えられる基板を作ってみました。
+　「G-BASICのゲームをカートリッジ化する」で作成したROMイメージを初代ぴゅう太で気楽に遊べるようROMイメージをディップスイッチで切り替えられる基板を作ってみました。
 
 　ゲームアダプタの機能を載せてあるので本体後部の拡張端子に差し込めば使えます。
+
+　https://tms9918.hatenablog.com/entry/2018/02/12/234003
 
 #### 注)初代ぴゅう太専用です。ぴゅう太mk2、ぴゅう太Jr.では動作しません。ぴゅう太mk2の拡張端子に挿入した場合、ぴゅう太mk2本体が故障する可能性もあり得ます。
 
