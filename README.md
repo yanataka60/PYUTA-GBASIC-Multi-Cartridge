@@ -80,7 +80,35 @@
 
 　確実な方法ですが、カバーを外す、ROMを引き抜く、ROMをダンプする、ROMを戻す、カバーを戻すという過程でぴゅう太本体及びROMを破壊してしまう可能性があります。自己責任でお願いします。
 
+本体裏のねじ6本を外します。
 
+[BIOS(1)](https://github.com/yanataka60/PYUTA-GBASIC-Multi-Cartridge/blob/main/JPEG/BIOS(1).JPG)
+
+本体カバーを上に持ち上げるとカバーは外れますが、キーボードとのケーブルがフィルムケーブルですので損傷しないよう静かに持ち上げてください。
+
+[BIOS(2)](https://github.com/yanataka60/PYUTA-GBASIC-Multi-Cartridge/blob/main/JPEG/BIOS(2).JPG)
+
+フィルムケーブルも外せると思うのですがうちの機体がかなりきつく入っており抜くと損傷しそうなのでそのまま作業を行うことにしました。
+
+外せるなら外してしまったほうが作業は楽です。
+
+コの字型の金具は手前に引き抜けます。
+
+[BIOS(3)](https://github.com/yanataka60/PYUTA-GBASIC-Multi-Cartridge/blob/main/JPEG/BIOS(3).JPG)
+
+シールド版を外すにはは6個のねじを外します。
+
+[BIOS(4)](https://github.com/yanataka60/PYUTA-GBASIC-Multi-Cartridge/blob/main/JPEG/BIOS(4).JPG)
+
+[BIOS(5)](https://github.com/yanataka60/PYUTA-GBASIC-Multi-Cartridge/blob/main/JPEG/BIOS(5).JPG)
+
+[BIOS(6)](https://github.com/yanataka60/PYUTA-GBASIC-Multi-Cartridge/blob/main/JPEG/BIOS(6).JPG)
+
+[BIOS(7)](https://github.com/yanataka60/PYUTA-GBASIC-Multi-Cartridge/blob/main/JPEG/BIOS(7).JPG)
+
+システムと書かれたROMを引き抜き内容をダンプ、IPL.ROMの名前で保存します。
+
+キーボードを接続しているフィルムケーブルが緩んでいないか確認しつつ逆の手順で戻していきます。
 
 ### ROMイメージ作成方法
 
