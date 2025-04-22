@@ -122,6 +122,8 @@ tutor1.binをpyuuta.zipという名前で圧縮します。
 
 mameを解凍したフォルダ中のromsフォルダにpyuuta.zipをコピーします。
 
+バイナリエディタでぴゅう太から抽出したIPL.ROM(0000h～7FFFh)のうち、4000h～4FFFhを抽出してbios.binとして保存しておきます。
+
 #### G-BASICのプログラムをwavファイルに変換
 日本語G-BASICシミュレータ for Windowsでプログラムを作成した場合には、DumpListEditorを使ってwavファイルに変換します。
 
@@ -175,15 +177,21 @@ G-BASICを起動させ、「10 ｵﾜﾘ」等でモニターモードに入る
 
 save ram.bin,F000:maincpu,100
 
-saved vram.bin,0000:tms9928a,4000
+saved vram1.bin,0000:tms9928a,1000
+
+saved vram2.bin,1000:tms9928a,3000
 
 を実行する。
 
 ![mame10](https://github.com/yanataka60/PYUTA-GBASIC-Multi-Cartridge/blob/main/JPEG/mame_10.jpg)
 
+このプロジェクト「PYUTA-GBASIC-Multi-Cartridge」の「loader」フォルダ中のloader.bin、先ほどIPL.ROMから抽出したbios.bin、今作成したram.bin、vram1.bin、vram2.binを同じフォルダに置く。
 
+そのフォルダからコマンドプロンプトを起動し、次のコマンドで連結する。
 
+copy /b loader.bin + ram.bin + vram1.bin + bios.bin + vram2.bin PROG.ROM
 
+PROG.ROMを27512の0000h、8000hを先頭アドレスとして書き込む。
 
 
 ## 謝辞
