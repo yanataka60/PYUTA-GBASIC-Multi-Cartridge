@@ -57,7 +57,7 @@
 ### ON、OFFスイッチ
 　OFFにすることでG-BASIC Multi Cartridgeを切り離すことができます。
 
-　G-BASIC Multi Cartridgeを挿入したまま、カートリッジスロットにカートリッジを挿入しても正常に動作するようにできます。
+　G-BASIC Multi Cartridgeを挿入したまま、カートリッジスロットにカートリッジを挿入して遊べます。
 
 ### ぴゅう太BIOS抽出方法
 　「G-BASICのゲームをカートリッジ化する」にはぴゅう太のBIOSを抽出する必要があります。
@@ -111,6 +111,80 @@
 キーボードを接続しているフィルムケーブルが緩んでいないか確認しつつ逆の手順で戻していきます。
 
 ### ROMイメージ作成方法
+#### MAMEの導入
+[MAME公式ページ]https://www.mamedev.org/
+
+mamexxxxx_64bit.exeをダウンロードし、実行すると解凍するフォルダ名を聞かれますのでそのままExtractを押すとmamexxxxx_64bit.exeのあるフォルダに解凍されます。
+
+ぴゅう太から抽出したIPL.ROMをtutor1.binという名前でコピーします。
+
+tutor1.binをpyuuta.zipという名前で圧縮します。
+
+mameを解凍したフォルダ中のromsフォルダにpyuuta.zipをコピーします。
+
+#### G-BASICのプログラムをwavファイルに変換
+日本語G-BASICシミュレータ for Windowsでプログラムを作成した場合には、DumpListEditorを使ってwavファイルに変換します。
+
+[日本語G-BASICシミュレータ for Windows]https://nrtdrv.sakura.ne.jp/gbasic/
+
+[DumpListEditor]https://bugfire2009.ojaru.jp/download.html#dleditor
+
+mame.exeと同じフォルダに変換したwavファイル(例としてtetris.wav)をコピーし、コマンドプロンプトから次の命令を実行します。
+
+mame.exe pyuuta -ui_active -debug -resolution 512x384 -cass tetris.wav
+
+mameがデバッグモードで起動します。
+
+![mame01](https://github.com/yanataka60/PYUTA-GBASIC-Multi-Cartridge/blob/main/JPEG/mame_01.jpg)
+
+メニューバーから「Media」をクリック、「Cassette(cass):tetris.wav」をクリック、「Pause/Stop」をクリック
+
+![mame02](https://github.com/yanataka60/PYUTA-GBASIC-Multi-Cartridge/blob/main/JPEG/mame_02.jpg)
+
+メニューバーから「Debug」をクリック、「Run」
+
+![mame03](https://github.com/yanataka60/PYUTA-GBASIC-Multi-Cartridge/blob/main/JPEG/mame_03.jpg)
+
+ぴゅう太が起動するのでエミュレーターウィンドウで一回クリックしてから何かキーを押す。
+
+![mame04](https://github.com/yanataka60/PYUTA-GBASIC-Multi-Cartridge/blob/main/JPEG/mame_04.jpg)
+
+G-BASICを起動させ、「10 ｵﾜﾘ」等でモニターモードに入る
+
+![mame042](https://github.com/yanataka60/PYUTA-GBASIC-Multi-Cartridge/blob/main/JPEG/mame_042.jpg)
+
+「ﾛｰﾄﾞ」RT
+
+![mame05](https://github.com/yanataka60/PYUTA-GBASIC-Multi-Cartridge/blob/main/JPEG/mame_05.jpg)
+
+ファイル名を入力
+
+![mame06](https://github.com/yanataka60/PYUTA-GBASIC-Multi-Cartridge/blob/main/JPEG/mame_06.jpg)
+
+メニューバーから「Media」をクリック、「Cassette(cass):tetris.wav」をクリック、「Play」をクリック
+
+![mame07](https://github.com/yanataka60/PYUTA-GBASIC-Multi-Cartridge/blob/main/JPEG/mame_07.jpg)
+
+「ﾃﾝｿｳ ｵﾜﾘ」と表示されるまで待つ。プログラムの大きさにかかわらず11分30秒ほどかかります。
+
+![mame08](https://github.com/yanataka60/PYUTA-GBASIC-Multi-Cartridge/blob/main/JPEG/mame_08.jpg)
+
+デバッグウィンドウのコマンド入力欄で一回クリックしてカーソルを移動。Help Memoryを実行してsave、savedのパラメータ入力方法を念のため確認する。
+
+![mame09](https://github.com/yanataka60/PYUTA-GBASIC-Multi-Cartridge/blob/main/JPEG/mame_09.jpg)
+
+save ram.bin,F000:maincpu,100
+
+saved vram.bin,0000:tms9928a,4000
+
+を実行する。
+
+![mame10](https://github.com/yanataka60/PYUTA-GBASIC-Multi-Cartridge/blob/main/JPEG/mame_10.jpg)
+
+
+
+
+
 
 ## 謝辞
 　たくさんのゲームを公開してくださっているいぬふと様、ありがとうございます。
