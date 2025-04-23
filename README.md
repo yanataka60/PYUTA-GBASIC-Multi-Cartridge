@@ -155,7 +155,7 @@ G-BASICを起動させ、「10 ｵﾜﾘ」等でモニターモードに入る
 
 ![mame05](https://github.com/yanataka60/PYUTA-GBASIC-Multi-Cartridge/blob/main/JPEG/mame_05.jpg)
 
-「ﾛｰﾄﾞ」RT
+「ﾛｰﾄﾞ」と入力、実行
 
 ![mame06](https://github.com/yanataka60/PYUTA-GBASIC-Multi-Cartridge/blob/main/JPEG/mame_06.jpg)
 
@@ -183,13 +183,13 @@ saved vram2.bin,1000:tms9928a,3000
 
 ![mame10](https://github.com/yanataka60/PYUTA-GBASIC-Multi-Cartridge/blob/main/JPEG/mame_10.jpg)
 
-mameのバージョンによってコマンドの書式が違う場合がある。エラー等表示される場合はHelp Memoryを実行してsave、savedのパラメータ入力方法を確認。
-
 ![mame11](https://github.com/yanataka60/PYUTA-GBASIC-Multi-Cartridge/blob/main/JPEG/mame_11.jpg)
 
-このプロジェクト「PYUTA-GBASIC-Multi-Cartridge」の「loader」フォルダ中のloader.bin、先ほどIPL.ROMから抽出したbios.bin、今作成したram.bin、vram1.bin、vram2.binを同じフォルダに置く。
+mameのバージョンによってコマンドの書式が違う場合がある。エラー等表示される場合はHelp Memoryを実行してsave、savedのパラメータ入力方法を確認。
 
-そのフォルダからコマンドプロンプトを起動し、次のコマンドで連結する。
+![mame12](https://github.com/yanataka60/PYUTA-GBASIC-Multi-Cartridge/blob/main/JPEG/mame_12.jpg)
+
+作成されたram.bin、vram1.bin、vram2.binとこのプロジェクト「PYUTA-GBASIC-Multi-Cartridge」の「loader」フォルダ中のloader.bin、先ほどIPL.ROMから抽出したbios.binを同じフォルダに置き、そのフォルダからコマンドプロンプトを起動し、次のコマンドでファイルを連結する。
 
 copy /b loader.bin + ram.bin + vram1.bin + bios.bin + vram2.bin PROG.ROM
 
@@ -197,6 +197,6 @@ PROG.ROMを27512の0000h、8000hを先頭アドレスとして書き込む。
 
 
 ## 謝辞
-　たくさんのゲームを公開してくださっているいぬふと様、ありがとうございます。
+　「G-BASICのゲームをカートリッジ化する」を公開してくださったたなむ様、ありがとうございます。
 
 　ぴゅう太の解析情報を公開してくださっているEnri様、ありがとうございます。
