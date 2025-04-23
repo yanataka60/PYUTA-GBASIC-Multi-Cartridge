@@ -95,7 +95,7 @@ loaderフォルダのloader.binを後述「ROMイメージ作成方法」で使�
 　「ぴゅう太の拡張スロットにRAM&ROMカートリッジをつないでみる　その３」より抜粋 https://tms9918.hatenablog.com/entry/2017/03/09/194928
 
 ### ON、OFFスイッチ
-　OFFにすることでG-BASIC Multi CartridgeのRAM、ROMの選択信号を非選択状態に固定することでRAM、ROMを切り離します。
+　OFFにすることでG-BASIC Multi CartridgeのRAM、ROMの選択信号を非選択状態に固定し、RAM、ROMを切り離します。
 
 　G-BASIC Multi Cartridgeを挿入したまま、カートリッジスロットにカートリッジを挿入して遊べます。
 
