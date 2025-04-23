@@ -65,8 +65,33 @@ loaderフォルダのloader.binを後述「ROMイメージ作成方法」で使�
 
 　いぬふとさんのぴゅう太32KROMイメージ用の32KROM Multi Cartridgeを初代ぴゅう太で遊ぶためにはゲームアダプタ相当品が必要ですが、このスイッチを32K側にすることでROMに焼かれた内容を32KROMイメージのゲームと解釈するようになりゲームアダプタ相当品なしでG-BASIC Multi Cartridgeだけで遊べます。
 
+　スイッチの切り替えによるRAM、ROMの割り当ては以下のように変化します。
+#### スイッチがCMT側の場合の割り当て
+Address   RAM    ROM
+>0000
+>2000
+>4000           >4000
+>6000    >6000
+>8000           >0000
+>A000           >2000
+>C000    >4000
+>E000
+　「ぴゅう太の拡張スロットにRAM&ROMカートリッジをつないでみる　その４」より抜粋 https://tms9918.hatenablog.com/entry/2017/03/25/215221
+
+#### スイッチが32K側の場合の割り当て
+Address   RAM    ROM
+>0000
+>2000
+>4000           >0000
+>6000           >2000
+>8000           >4000
+>A000           >6000
+>C000
+>E000
+　「ぴゅう太の拡張スロットにRAM&ROMカートリッジをつないでみる　その３」より抜粋 https://tms9918.hatenablog.com/entry/2017/03/09/194928
+
 ### ON、OFFスイッチ
-　OFFにすることでG-BASIC Multi Cartridgeを切り離すことができます。
+　OFFにすることでG-BASIC Multi CartridgeのRAM、ROMの選択信号を非選択状態に固定することでRAM、ROMを切り離します。
 
 　G-BASIC Multi Cartridgeを挿入したまま、カートリッジスロットにカートリッジを挿入して遊べます。
 
