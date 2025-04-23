@@ -41,6 +41,17 @@
 ### GALへの書込み
 　cuplフォルダのPYUTACMT.jedをROMライター(TL866II Plus等)を使ってGAL22V10に書き込みます。
 
+### loader.bin
+loaderフォルダのloader.binを後述「ROMイメージ作成方法」で使います。
+
+ソースコードは「G-BASICのゲームをカートリッジ化する」に掲載されていますが、vdpmemcpyで書き込んだだけではVRAMに背景色が設定されないようなので以下の修正を加えてコンパイルしています。
+
+/* VDP SETUP */の前に次の1行を付加。
+  const unsigned char *p = (const unsigned char*)0x8fee;
+
+/* RESTORE VRAM */の前に次の1行を付加。
+  bordercolor(*p);
+
 ### ROMへの書込み
 　後述「ROMイメージ作成方法」で作成したROMイメージを27512の0000h、8000hを先頭アドレスとして書き込みます。
 
