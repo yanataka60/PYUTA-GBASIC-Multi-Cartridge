@@ -153,27 +153,25 @@ mameがデバッグモードで起動します。
 
 G-BASICを起動させ、「10 ｵﾜﾘ」等でモニターモードに入る
 
-![mame042](https://github.com/yanataka60/PYUTA-GBASIC-Multi-Cartridge/blob/main/JPEG/mame_042.jpg)
+![mame05](https://github.com/yanataka60/PYUTA-GBASIC-Multi-Cartridge/blob/main/JPEG/mame_05.jpg)
 
 「ﾛｰﾄﾞ」RT
 
-![mame05](https://github.com/yanataka60/PYUTA-GBASIC-Multi-Cartridge/blob/main/JPEG/mame_05.jpg)
+![mame06](https://github.com/yanataka60/PYUTA-GBASIC-Multi-Cartridge/blob/main/JPEG/mame_06.jpg)
 
 ファイル名を入力
 
-![mame06](https://github.com/yanataka60/PYUTA-GBASIC-Multi-Cartridge/blob/main/JPEG/mame_06.jpg)
+![mame07](https://github.com/yanataka60/PYUTA-GBASIC-Multi-Cartridge/blob/main/JPEG/mame_07.jpg)
 
 メニューバーから「Media」をクリック、「Cassette(cass):tetris.wav」をクリック、「Play」をクリック
 
-![mame07](https://github.com/yanataka60/PYUTA-GBASIC-Multi-Cartridge/blob/main/JPEG/mame_07.jpg)
+![mame08](https://github.com/yanataka60/PYUTA-GBASIC-Multi-Cartridge/blob/main/JPEG/mame_08.jpg)
 
 「ﾃﾝｿｳ ｵﾜﾘ」と表示されるまで待つ。プログラムの大きさにかかわらず11分30秒ほどかかります。
 
-![mame08](https://github.com/yanataka60/PYUTA-GBASIC-Multi-Cartridge/blob/main/JPEG/mame_08.jpg)
-
-デバッグウィンドウのコマンド入力欄で一回クリックしてカーソルを移動。Help Memoryを実行してsave、savedのパラメータ入力方法を念のため確認する。
-
 ![mame09](https://github.com/yanataka60/PYUTA-GBASIC-Multi-Cartridge/blob/main/JPEG/mame_09.jpg)
+
+デバッグウィンドウのコマンド入力欄で一回クリックしてカーソルを移動。
 
 save ram.bin,F000:maincpu,100
 
@@ -184,6 +182,10 @@ saved vram2.bin,1000:tms9928a,3000
 を実行する。
 
 ![mame10](https://github.com/yanataka60/PYUTA-GBASIC-Multi-Cartridge/blob/main/JPEG/mame_10.jpg)
+
+mameのバージョンによってコマンドの書式が違う場合がある。エラー等表示される場合はHelp Memoryを実行してsave、savedのパラメータ入力方法を確認。
+
+![mame11](https://github.com/yanataka60/PYUTA-GBASIC-Multi-Cartridge/blob/main/JPEG/mame_11.jpg)
 
 このプロジェクト「PYUTA-GBASIC-Multi-Cartridge」の「loader」フォルダ中のloader.bin、先ほどIPL.ROMから抽出したbios.bin、今作成したram.bin、vram1.bin、vram2.binを同じフォルダに置く。
 
