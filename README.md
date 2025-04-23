@@ -91,23 +91,23 @@ loaderフォルダのloader.binを後述「ROMイメージ作成方法」で使�
 
 　確実な方法ですが、カバーを外す、ROMを引き抜く、ROMをダンプする、ROMを戻す、カバーを戻すという過程でぴゅう太本体及びROMを破壊してしまう可能性があります。自己責任でお願いします。
 
-本体裏のねじ6本を外します。
+　本体裏のねじ6本を外します。
 
 ![BIOS(1)](https://github.com/yanataka60/PYUTA-GBASIC-Multi-Cartridge/blob/main/JPEG/BIOS(1).JPG)
 
-本体カバーを上に持ち上げるとカバーは外れますが、キーボードとのケーブルがフィルムケーブルですので損傷しないよう静かに持ち上げてください。
+　本体カバーを上に持ち上げるとカバーは外れますが、キーボードとのケーブルがフィルムケーブルですので損傷しないよう静かに持ち上げてください。
 
 ![BIOS(2)](https://github.com/yanataka60/PYUTA-GBASIC-Multi-Cartridge/blob/main/JPEG/BIOS(2).JPG)
 
-フィルムケーブルも外せると思うのですがうちの機体がかなりきつく入っており抜くと損傷しそうなのでそのまま作業を行うことにしました。
+　フィルムケーブルも外せると思うのですがうちの機体がかなりきつく入っており抜くと損傷しそうなのでそのまま作業を行うことにしました。
 
-外せるなら外してしまったほうが作業は楽です。
+　外せるなら外してしまったほうが作業は楽です。
 
-コの字型の金具は手前に引き抜けます。
+　コの字型の金具は手前に引き抜けます。
 
 ![BIOS(3)](https://github.com/yanataka60/PYUTA-GBASIC-Multi-Cartridge/blob/main/JPEG/BIOS(3).JPG)
 
-シールド版を外すにはは6個のねじを外します。
+　シールド版を外すにはは6個のねじを外します。
 
 ![BIOS(4)](https://github.com/yanataka60/PYUTA-GBASIC-Multi-Cartridge/blob/main/JPEG/BIOS(4).JPG)
 
@@ -117,94 +117,97 @@ loaderフォルダのloader.binを後述「ROMイメージ作成方法」で使�
 
 ![BIOS(7)](https://github.com/yanataka60/PYUTA-GBASIC-Multi-Cartridge/blob/main/JPEG/BIOS(7).JPG)
 
-システムと書かれたROMを引き抜き内容をダンプ、IPL.ROMの名前で保存します。
+　システムと書かれたROMを引き抜き内容をダンプ、IPL.ROMの名前で保存します。
 
-キーボードを接続しているフィルムケーブルが緩んでいないか確認しつつ逆の手順で戻していきます。
+　キーボードを接続しているフィルムケーブルが緩んでいないか確認しつつ逆の手順で戻していきます。
 
 ### ROMイメージ作成方法
-#### MAMEの導入
-[MAME公式ページ]https://www.mamedev.org/
+#### 1 MAMEの導入
+　[MAME公式ページ]https://www.mamedev.org/
 
-mamexxxxx_64bit.exeをダウンロードし、実行すると解凍するフォルダ名を聞かれますのでそのままExtractを押すとmamexxxxx_64bit.exeのあるフォルダに解凍されます。
+　mamexxxxx_64bit.exeをダウンロードし、実行すると解凍するフォルダ名を聞かれますのでそのままExtractを押すとmamexxxxx_64bit.exeのあるフォルダに解凍されます。
 
-ぴゅう太から抽出したIPL.ROMをtutor1.binという名前でコピーします。
+　ぴゅう太から抽出したIPL.ROMをtutor1.binという名前でコピーします。
 
-tutor1.binをpyuuta.zipという名前で圧縮します。
+　tutor1.binをpyuuta.zipという名前で圧縮します。
 
-mameを解凍したフォルダ中のromsフォルダにpyuuta.zipをコピーします。
+　mameを解凍したフォルダ中のromsフォルダにpyuuta.zipをコピーします。
 
-バイナリエディタでぴゅう太から抽出したIPL.ROM(0000h～7FFFh)のうち、4000h～4FFFhを抽出してbios.binとして保存しておきます。
+　バイナリエディタでぴゅう太から抽出したIPL.ROM(0000h～7FFFh)のうち、4000h～4FFFhを抽出してbios.binとして保存しておきます。
 
-#### G-BASICのプログラムをwavファイルに変換
-日本語G-BASICシミュレータ for Windowsでプログラムを作成した場合には、DumpListEditorを使ってwavファイルに変換します。
+#### 2 G-BASICのプログラムをwavファイルに変換
+　日本語G-BASICシミュレータ for Windowsでプログラムを作成した場合には、DumpListEditorを使ってwavファイルに変換します。
 
-[日本語G-BASICシミュレータ for Windows]https://nrtdrv.sakura.ne.jp/gbasic/
+　[日本語G-BASICシミュレータ for Windows]https://nrtdrv.sakura.ne.jp/gbasic/
 
-[DumpListEditor]https://bugfire2009.ojaru.jp/download.html#dleditor
+　[DumpListEditor]https://bugfire2009.ojaru.jp/download.html#dleditor
 
-mame.exeと同じフォルダに変換したwavファイル(例としてtetris.wav)をコピーし、コマンドプロンプトから次の命令を実行します。
+#### 3 mameのデバックモードでVRAMイメージを抽出
+　mame.exeと同じフォルダに変換したwavファイル(例としてtetris.wav)をコピーし、コマンドプロンプトから次の命令を実行します。
 
-mame.exe pyuuta -ui_active -debug -resolution 512x384 -cass tetris.wav
+　mame.exe pyuuta -ui_active -debug -resolution 512x384 -cass tetris.wav
 
-mameがデバッグモードで起動します。
+　mameがデバッグモードで起動します。
 
 ![mame01](https://github.com/yanataka60/PYUTA-GBASIC-Multi-Cartridge/blob/main/JPEG/mame_01.jpg)
 
-メニューバーから「Media」をクリック、「Cassette(cass):tetris.wav」をクリック、「Pause/Stop」をクリック
+　メニューバーから「Media」をクリック、「Cassette(cass):tetris.wav」をクリック、「Pause/Stop」をクリック
 
 ![mame02](https://github.com/yanataka60/PYUTA-GBASIC-Multi-Cartridge/blob/main/JPEG/mame_02.jpg)
 
-メニューバーから「Debug」をクリック、「Run」
+　メニューバーから「Debug」をクリック、「Run」
 
 ![mame03](https://github.com/yanataka60/PYUTA-GBASIC-Multi-Cartridge/blob/main/JPEG/mame_03.jpg)
 
-ぴゅう太が起動するのでエミュレーターウィンドウで一回クリックしてから何かキーを押す。
+　ぴゅう太が起動するのでエミュレーターウィンドウで一回クリックしてから何かキーを押す。
 
 ![mame04](https://github.com/yanataka60/PYUTA-GBASIC-Multi-Cartridge/blob/main/JPEG/mame_04.jpg)
 
-G-BASICを起動させ、「10 ｵﾜﾘ」等でモニターモードに入る
+　G-BASICを起動させ、「10 ｵﾜﾘ」等でモニターモードに入る
 
 ![mame05](https://github.com/yanataka60/PYUTA-GBASIC-Multi-Cartridge/blob/main/JPEG/mame_05.jpg)
 
-「ﾛｰﾄﾞ」と入力、実行
+　「ﾛｰﾄﾞ」と入力、実行
 
 ![mame06](https://github.com/yanataka60/PYUTA-GBASIC-Multi-Cartridge/blob/main/JPEG/mame_06.jpg)
 
-ファイル名を入力
+　ファイル名を入力
 
 ![mame07](https://github.com/yanataka60/PYUTA-GBASIC-Multi-Cartridge/blob/main/JPEG/mame_07.jpg)
 
-メニューバーから「Media」をクリック、「Cassette(cass):tetris.wav」をクリック、「Play」をクリック
+　メニューバーから「Media」をクリック、「Cassette(cass):tetris.wav」をクリック、「Play」をクリック
 
 ![mame08](https://github.com/yanataka60/PYUTA-GBASIC-Multi-Cartridge/blob/main/JPEG/mame_08.jpg)
 
-「ﾃﾝｿｳ ｵﾜﾘ」と表示されるまで待つ。プログラムの大きさにかかわらず11分30秒ほどかかります。
+　「ﾃﾝｿｳ ｵﾜﾘ」と表示されるまで待つ。プログラムの大きさにかかわらず11分30秒ほどかかります。
 
 ![mame09](https://github.com/yanataka60/PYUTA-GBASIC-Multi-Cartridge/blob/main/JPEG/mame_09.jpg)
 
-デバッグウィンドウのコマンド入力欄で一回クリックしてカーソルを移動。
+　デバッグウィンドウのコマンド入力欄で一回クリックしてカーソルを移動。
 
-save ram.bin,F000:maincpu,100
+　save ram.bin,F000:maincpu,100
 
-saved vram1.bin,0000:tms9928a,1000
+　saved vram1.bin,0000:tms9928a,1000
 
-saved vram2.bin,1000:tms9928a,3000
+　saved vram2.bin,1000:tms9928a,3000
 
-を実行する。
+　を実行する。
 
 ![mame10](https://github.com/yanataka60/PYUTA-GBASIC-Multi-Cartridge/blob/main/JPEG/mame_10.jpg)
 
 ![mame11](https://github.com/yanataka60/PYUTA-GBASIC-Multi-Cartridge/blob/main/JPEG/mame_11.jpg)
 
-mameのバージョンによってコマンドの書式が違う場合がある。エラー等表示される場合はHelp Memoryを実行してsave、savedのパラメータ入力方法を確認。
+　mameのバージョンによってコマンドの書式が違う場合がある。エラー等表示される場合はHelp Memoryを実行してsave、savedのパラメータ入力方法を確認。
 
 ![mame12](https://github.com/yanataka60/PYUTA-GBASIC-Multi-Cartridge/blob/main/JPEG/mame_12.jpg)
 
-作成されたram.bin、vram1.bin、vram2.binとこのプロジェクト「PYUTA-GBASIC-Multi-Cartridge」の「loader」フォルダ中のloader.bin、先ほどIPL.ROMから抽出したbios.binを同じフォルダに置き、そのフォルダからコマンドプロンプトを起動し、次のコマンドでファイルを連結する。
+#### 4 ROM書き込みイメージデータの作成
+　作成されたram.bin、vram1.bin、vram2.binとこのプロジェクト「PYUTA-GBASIC-Multi-Cartridge」の「loader」フォルダ中のloader.bin、先ほどIPL.ROMから抽出したbios.binを同じフォルダに置き、そのフォルダからコマンドプロンプトを起動し、次のコマンドでファイルを連結する。
 
-copy /b loader.bin + ram.bin + vram1.bin + bios.bin + vram2.bin PROG.ROM
+　copy /b loader.bin + ram.bin + vram1.bin + bios.bin + vram2.bin PROG.ROM
 
-PROG.ROMを27512の0000h、8000hを先頭アドレスとして書き込む。
+#### 5 ROMへの書き込み
+　PROG.ROMを27512の0000h、8000hを先頭アドレスとして書き込む。
 
 
 ## 謝辞
