@@ -78,7 +78,7 @@ loaderフォルダのloader.binを後述「ROMイメージ作成方法」で使�
 |>C000|>4000||
 |>E000|||
 
-　「ぴゅう太の拡張スロットにRAM&ROMカートリッジをつないでみる　その４」より抜粋 https://tms9918.hatenablog.com/entry/2017/03/25/215221
+　「ぴゅう太の拡張スロットにRAM&ROMカートリッジをつないでみる　その７」より抜粋 https://tms9918.hatenablog.com/entry/2018/01/29/071436
 
 #### スイッチが32K側の場合の割り当て
 |Address|RAM|ROM|
