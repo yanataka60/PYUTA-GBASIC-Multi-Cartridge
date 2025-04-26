@@ -180,39 +180,39 @@ loaderフォルダのloader.binを後述「ROMイメージ作成方法」で使�
 
 ![mame01](https://github.com/yanataka60/PYUTA-GBASIC-Multi-Cartridge/blob/main/JPEG/mame_01.jpg)
 
-　メニューバーから「Media」をクリック、「Cassette(cass):tetris.wav」をクリック、「Pause/Stop」をクリック
+　メニューバーから「Media」をクリック、「Cassette(cass):tetris.wav」をクリック、「Pause/Stop」をクリックします。
 
 ![mame02](https://github.com/yanataka60/PYUTA-GBASIC-Multi-Cartridge/blob/main/JPEG/mame_02.jpg)
 
-　メニューバーから「Debug」をクリック、「Run」
+　メニューバーから「Debug」をクリック、「Run」をクリックします。
 
 ![mame03](https://github.com/yanataka60/PYUTA-GBASIC-Multi-Cartridge/blob/main/JPEG/mame_03.jpg)
 
-　ぴゅう太が起動するのでエミュレーターウィンドウで一回クリックしてから何かキーを押す。
+　ぴゅう太が起動するのでエミュレーターウィンドウで一回クリックしてから何かキーを押します。
 
 ![mame04](https://github.com/yanataka60/PYUTA-GBASIC-Multi-Cartridge/blob/main/JPEG/mame_04.jpg)
 
-　G-BASICを起動させ、「10 ｵﾜﾘ」等でモニターモードに入る
+　G-BASICを起動させ、「10 ｵﾜﾘ」等でモニターモードに入ります。
 
 ![mame05](https://github.com/yanataka60/PYUTA-GBASIC-Multi-Cartridge/blob/main/JPEG/mame_05.jpg)
 
-　「ﾛｰﾄﾞ」と入力、実行
+　「ﾛｰﾄﾞ」と入力して実行します。
 
 ![mame06](https://github.com/yanataka60/PYUTA-GBASIC-Multi-Cartridge/blob/main/JPEG/mame_06.jpg)
 
-　ファイル名を入力
+　ファイル名を入力します。
 
 ![mame07](https://github.com/yanataka60/PYUTA-GBASIC-Multi-Cartridge/blob/main/JPEG/mame_07.jpg)
 
-　メニューバーから「Media」をクリック、「Cassette(cass):tetris.wav」をクリック、「Play」をクリック
+　メニューバーから「Media」をクリック、「Cassette(cass):tetris.wav」をクリック、「Play」をクリックします。
 
 ![mame08](https://github.com/yanataka60/PYUTA-GBASIC-Multi-Cartridge/blob/main/JPEG/mame_08.jpg)
 
-　「ﾃﾝｿｳ ｵﾜﾘ」と表示されるまで待つ。プログラムの大きさにかかわらず11分30秒ほどかかります。
+　「ﾃﾝｿｳ ｵﾜﾘ」と表示されるまで待ちます。プログラムの大きさにかかわらず11分30秒ほどかかります。
 
 ![mame09](https://github.com/yanataka60/PYUTA-GBASIC-Multi-Cartridge/blob/main/JPEG/mame_09.jpg)
 
-　デバッグウィンドウのコマンド入力欄で一回クリックしてカーソルを移動。
+　デバッグウィンドウのコマンド入力欄で一回クリックしてカーソルを移動します。
 
 　save ram.bin,F000:maincpu,100
 
@@ -220,23 +220,23 @@ loaderフォルダのloader.binを後述「ROMイメージ作成方法」で使�
 
 　saved vram2.bin,1000:tms9928a,3000
 
-　を実行する。
+　をそれぞれ実行します。
 
 ![mame10](https://github.com/yanataka60/PYUTA-GBASIC-Multi-Cartridge/blob/main/JPEG/mame_10.jpg)
 
 ![mame11](https://github.com/yanataka60/PYUTA-GBASIC-Multi-Cartridge/blob/main/JPEG/mame_11.jpg)
 
-　mameのバージョンによってコマンドの書式が違う場合がある。エラー等表示される場合はHelp Memoryを実行してsave、savedのパラメータ入力方法を確認。
+　mameのバージョンによってコマンドの書式が違う場合がありますので、もしエラー等表示されSAVE出来ない場合はHelp Memoryを実行してsave、savedのパラメータ入力方法を確認してください。
 
 ![mame12](https://github.com/yanataka60/PYUTA-GBASIC-Multi-Cartridge/blob/main/JPEG/mame_12.jpg)
 
 #### 4 ROM書き込みイメージデータの作成
-　作成されたram.bin、vram1.bin、vram2.binとこのプロジェクト「PYUTA-GBASIC-Multi-Cartridge」の「loader」フォルダ中のloader.bin、先ほどIPL.ROMから抽出したbios.binを同じフォルダに置き、そのフォルダからコマンドプロンプトを起動し、次のコマンドでファイルを連結する。
+　作成されたram.bin、vram1.bin、vram2.binとこのプロジェクト「PYUTA-GBASIC-Multi-Cartridge」の「loader」フォルダ中のloader.bin、先ほどIPL.ROMから抽出したbios.binを同じフォルダに置き、そのフォルダからコマンドプロンプトを起動し、次のコマンドでファイルを連結します。
 
 　copy /b loader.bin + ram.bin + vram1.bin + bios.bin + vram2.bin PROG.ROM
 
 #### 5 ROMへの書き込み
-　PROG.ROMを27512の0000h、8000hを先頭アドレスとして書き込む。
+　PROG.ROMを27512の0000h、8000hを先頭アドレスとして書き込みます。
 
 
 ## 謝辞
