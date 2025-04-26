@@ -168,7 +168,7 @@
 
 　mameを解凍したフォルダ中のromsフォルダにpyuuta.zipをコピーします。
 
-　バイナリエディタでぴゅう太から抽出したIPL.ROM(0000h～7FFFh)のうち、4000h～4FFFhを抽出してbios.binとして保存しておきます。
+　後述のROM書き込みイメージデータの作成に必要になるのでぴゅう太から抽出したIPL.ROM(0000h～7FFFh)のうち、4000h～4FFFhをバイナリエディタで抽出してbios.binとして保存しておきます。
 
 #### 2 G-BASICのプログラムをwavファイルに変換
 　日本語G-BASICシミュレータ for Windowsでプログラムを作成した場合には、DumpListEditorを使ってwavファイルに変換します。
