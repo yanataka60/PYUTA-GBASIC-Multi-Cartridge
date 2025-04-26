@@ -44,7 +44,11 @@
 ### loader.bin
 loaderフォルダのloader.binを後述「ROMイメージ作成方法」で使います。
 
-ソースコードは「G-BASICのゲームをカートリッジ化する」に掲載されていますが、vdpmemcpyで書き込んだだけではVRAMに背景色が設定されないようなので以下の修正を加えてコンパイルしています。
+ソースコードは「G-BASICのゲームをカートリッジ化する」に掲載されています。
+
+　「G-BASICのゲームをカートリッジ化する」https://tms9918.hatenablog.com/entry/2018/02/12/234003
+
+しかし、vdpmemcpy関数で書き込んだだけではVRAMに背景色が設定されないとのことでしたが、試行錯誤の結果bordercolor関数で設定できましたので以下の修正を加えてコンパイルしています。
 
 /* VDP SETUP */の前に次の1行を付加。
   const unsigned char *p = (const unsigned char*)0x8fee;
