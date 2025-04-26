@@ -40,11 +40,11 @@ CMT_A14 = A1;
 
 32K_A14 =  !(A1);
 
-CE_n = CMT_CE_n # 32K_SEL # OFF_SW;
+CE_n = (!(CMT_SEL) # CMT_CE_n) # (32K_SEL) # OFF_SW;
 
-CE2_n =(CMT_SEL # CMT_CE2_n) & (32K_SEL # 32K_CE2_n) # OFF_SW;
+CE2_n =(!(CMT_SEL) # CMT_CE2_n) & (!(32K_SEL) # 32K_CE2_n) # OFF_SW;
 
-SELEXM = (CMT_SEL # CMT_SELEXM) & (32K_SEL # 32K_SELEXM) & !(OFF_SW);
+SELEXM = (CMT_SEL & CMT_SELEXM) # (32K_SEL & 32K_SELEXM) & !(OFF_SW);
 
 A14 = (CMT_SEL & CMT_A14) # (32K_SEL & 32K_A14);
 
